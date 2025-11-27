@@ -46,7 +46,7 @@ Replace API_ID, API_HASH, and PHONE_NUMBER in the `config.json` with your settin
   "MT5_INSTANCE": {
     "main": "C:\\Program Files\\MetaTrader\\terminal64.exe"
   },
-  "CHANNEL_IDS": [1002980294892],
+  "CHANNEL_IDS": [1002980294890,1001609594692, 1002080341106, 1001490446443,1001584939836,1001272542052,1002495224665],
   "SYMBOL_MAP": {
     "XAUUSD": "XAUUSDz",
     "GOLD": "XAUUSDz"
@@ -59,6 +59,8 @@ Replace API_ID, API_HASH, and PHONE_NUMBER in the `config.json` with your settin
 }
 
 ```
+TP_THRESHOLD and SL_THRESHOLD (both default 0.0015 or 0.15%) act as maximum relative distance filters from entry price. They prevent execution of signals with unrealistically distant take profit/stop loss levels, or when the signal provider didn't define a TP/SL 
+0.15% is very thight because the sample groups trade mostly 1min Gold scalping usually with a very small TP/SL.
 
 2. MT5 Setup:
 
