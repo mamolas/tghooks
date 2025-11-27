@@ -3,7 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/mamolas/tghooks)](https://github.com/mamolas/tghooks)
 [![GitHub license](https://img.shields.io/github/license/mamolas/tghooks)](https://github.com/mamolas/tghooks/blob/main/LICENSE)
 
-**tghooks** is a tool that bridges Telegram forex signal channels to MetaTrader 5 (MT5), automatically executing trades based on signals received from Telegram groups/channels.
+**tghooks** is a tool that bridges Telegram forex signal channels to MetaTrader 5 (MT5), automatically executing trades based on signals received from Telegram groups/channels by integrating Telethon with MT5 for automated trading.
 
 ## 🚀 Features
 
@@ -12,6 +12,12 @@
 - Configurable risk management
 - Multiple symbol support
 - Signal filtering and validation
+- Only processes messages containing BUY/SELL keywords
+- Maps symbols using your SYMBOL_MAP
+- Places market orders at current/specified price
+- Places pending orders at best price when different
+- Sets TP (closest level) and SL automatically
+- Uses channel ID as magic number and comment
 
 ## 📋 Prerequisites
 
@@ -63,11 +69,15 @@ python main.py
 
 ## 📊 Signal Format
 
-Supports common forex signal formats:
+Supports common forex signal formats, it handles all the parsing automatically and executes both market and pending orders as needed.:
 
 ```
 EURUSD BUY 1.0850 TP:1.0900 SL:1.0820
 GBPUSD SELL 1.2650 | TP1:1.2600 TP2:1.2550 | SL:1.2700
+"GOLD BUY 3527/ 3524" → Market buy + Buy limit at 3524
+"GOLD SELL NOW PRICE: 3551 -3554" → Market sell + Sell limit at 3554
+"Compro oro ahora 3538.4 - 3535" → Market buy + Buy limit at 3535
+
 ```
 
 ## 🛡️ Risk Management
@@ -105,5 +115,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - [MetaTrader 5 Python API](https://www.mql5.com/en/docs/integration/python_metatrader5)
-- [python-telegram-bot](https://python-telegram-bot.org/)
+- [Telethon](https://github.com/LonamiWebs/Telethon)
 - Forex trading community
