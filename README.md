@@ -38,7 +38,9 @@ pip install -r requirements.txt
 
 ## ⚙️ Configuration
 
-1. Create `config.json` with your settings:
+1. Get API credentials from https://my.telegram.org
+Replace API_ID, API_HASH, and PHONE_NUMBER in the `config.json` with your settings:
+
 ```json
 {
   "MT5_INSTANCE": {
@@ -58,8 +60,11 @@ pip install -r requirements.txt
 
 ```
 
-2. Get Telegram Bot Token: [@BotFather](https://t.me/botfather)
-3. Get Chat ID from your signal channel/group
+2. MT5 Setup:
+
+Ensure MT5 is installed at the specified path
+Enable algorithmic trading in MT5
+
 
 ## ▶️ Usage
 
