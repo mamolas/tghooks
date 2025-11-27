@@ -35,20 +35,21 @@ pip install -r requirements.txt
 1. Create `config.json` with your settings:
 ```json
 {
-  "telegram": {
-    "bot_token": "YOUR_BOT_TOKEN",
-    "chat_id": "YOUR_CHAT_ID"
+  "MT5_INSTANCE": {
+    "main": "C:\\Program Files\\MetaTrader\\terminal64.exe"
   },
-  "mt5": {
-    "login": "YOUR_MT5_LOGIN",
-    "password": "YOUR_MT5_PASSWORD",
-    "server": "YOUR_BROKER_SERVER"
+  "CHANNEL_IDS": [1002980294892],
+  "SYMBOL_MAP": {
+    "XAUUSD": "XAUUSDz",
+    "GOLD": "XAUUSDz"
   },
-  "risk": {
-    "max_risk_percent": 2.0,
-    "max_positions": 5
-  }
+  "API_ID": "your_api_id",
+  "API_HASH": "your_api_hash",
+  "PHONE_NUMBER": "1234567890",
+  "TP_THRESHOLD": 0.0015,
+  "SL_THRESHOLD": 0.0015
 }
+
 ```
 
 2. Get Telegram Bot Token: [@BotFather](https://t.me/botfather)
